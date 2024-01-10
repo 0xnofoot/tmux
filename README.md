@@ -1,4 +1,4 @@
-the tmux config
+the tmux config for arch linux(or another linux)
 
 clone it to ~/.config
 
