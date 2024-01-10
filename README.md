@@ -1,4 +1,4 @@
-the tmux config
+the tmux config for MacOS
 
 clone it to ~/.config
 
