@@ -1,11 +1,10 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 get_total_cpu_usage() {
-    # 使用 top 命令获取总 CPU 使用率信息
-    total_cpu=$(top -l 1 -n 0 -F | grep "CPU usage" | awk '{print $3}' | cut -d% -f1)
-
     # 输出总 CPU 使用率
-    echo "$total_cpu%"
+	cpu_usage=$(top -b -n 1 | awk '/Cpu\(s\)/ {print $2}' | cut -d '%' -f 1)
+    echo "$cpu_usage"
 }
 
-echo "$(get_total_cpu_usage)"
+echo "$(get_total_cpu_usage)%"
+
