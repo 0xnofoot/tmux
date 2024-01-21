@@ -23,7 +23,7 @@ get_network_stat_upload() {
 
     if [[ $interface_tx =~ ^([0-9]+)$ ]]; then
         interface_tx="$(echo "scale=0; $interface_tx / 1024" | bc)K"
-    elif [[ $interface_rx =~ ^([0-9]+)K$ ]]; then
+    elif [[ $interface_tx =~ ^([0-9]+)K$ ]]; then
         number_part="${BASH_REMATCH[1]}"
         interface_tx="$(echo "scale=1; $number_part / 1024" | bc)M"
 
